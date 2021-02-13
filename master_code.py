@@ -116,37 +116,4 @@ ax.gridlines()  # add grid line
 # In[25]:
 
 
-import imageio
-from pathlib import Path
-from IPython.display import Image
-
-
-# In[26]:
-
-
-import glob
-images=[]
-for file in glob.glob("*.png"):
-    images.append(file)
-
-
-# In[27]:
-
-
-image_list = []
-for file_name in images:
-    image_list.append(imageio.imread(file_name))
-
-
-# In[28]:
-
-
-imageio.mimwrite('animation.gif', image_list,duration=2,loop=20)
-
-
-# In[29]:
-
-
-with open('animation.gif','rb') as f:
-    display(Image(data=f.read(), format='png'))
 
